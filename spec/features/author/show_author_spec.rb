@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Show author page" do
+describe "Show author page", type: :feature do
 
   it "should render without errors" do
     @alan = FactoryGirl.create :author

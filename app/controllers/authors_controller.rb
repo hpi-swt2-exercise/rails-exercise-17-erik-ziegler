@@ -1,5 +1,9 @@
 
 class AuthorsController < ApplicationController
+  def index
+      
+  end
+
   # POST /authors/new
   def create
     @author = Author.new(author_params)
