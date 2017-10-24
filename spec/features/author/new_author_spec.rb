@@ -22,5 +22,10 @@ describe "New author page", type: :feature do
     fill_in "author_homepage", :with => 'http://wikipedia.org/Alan_Turing'
 
     find('input[type="submit"]').click
+
+    author = Author.last
+    expect(author.first_name).to eq('Alan')
+    expect(author.last_name).to eq('Turing')
+    expect(author.homepage).to eq('http://wikipedia.org/Alan_Turing')
   end
 end
