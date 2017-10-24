@@ -13,5 +13,6 @@ describe "Show author page" do
 
     expect(page).to have_content(@alan.first_name)
     expect(page).to have_content(@alan.last_name)
+    expect(page).to have_content(@alan.homepage)
   end
 end
