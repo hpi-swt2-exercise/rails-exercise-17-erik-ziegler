@@ -13,4 +13,8 @@ describe "Index author page", type: :feature do
 
     expect(page).to have_content(@alan.name)
   end
+
+  it "should have add_author_link" do
+    expect(page).to have_css("a", "Add author")
+  end
 end
