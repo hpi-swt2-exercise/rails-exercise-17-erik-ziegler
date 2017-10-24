@@ -5,11 +5,16 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
 
     @author.save
-    render plain: ''
+    redirect_to @author
   end
 
   # GET /authors/new
   def new; end
+
+  # GET /authors/:id
+  def show
+    @author = Author.find(params[:id])
+  end
 
   private
 
