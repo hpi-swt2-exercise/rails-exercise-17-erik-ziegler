@@ -12,5 +12,6 @@ describe "Show author page" do
     visit author_path @alan
 
     expect(page).to have_content(@alan.first_name)
+    expect(page).to have_content(@alan.last_name)
   end
 end
