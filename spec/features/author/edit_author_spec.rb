@@ -6,4 +6,13 @@ describe "Edit author page", type: :feature do
     @alan = FactoryGirl.create :author
     visit edit_author_path @alan
   end
+
+  it "should be able to change first name without error" do
+    @alan = FactoryGirl.create :author
+    visit edit_author_path @alan
+
+    fill_in "author_first_name", :with => 'Alan Mathison'
+
+    find('input[type="submit"]').click
+  end
 end
