@@ -5,8 +5,6 @@ describe "Author", :type => :model do
   let(:invalid_author) {Author.new(first_name: 'Alan', last_name: nil, homepage: nil)}
 
   it 'should have correct first name, last name and homepage' do
-
-
     expect(author.first_name).to eq('Alan')
     expect(author.last_name).to eq('Turing')
     expect(author.homepage).to eq('http://wikipedia.org/Alan_Turing')
@@ -16,7 +14,7 @@ describe "Author", :type => :model do
     expect(author.name).to eq('Alan Turing')
   end
 
-  it 'should be valid' do
+  it 'should be invalid' do
     expect(invalid_author).to_not be_valid
   end
 end
