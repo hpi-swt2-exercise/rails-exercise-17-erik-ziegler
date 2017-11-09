@@ -20,6 +20,11 @@ class AuthorsController < ApplicationController
     @author = Author.new
   end
 
+  # GET /authors/:id/edit
+  def edit
+    @author = Author.find(params[:id])
+  end
+
   # GET /authors/:id
   def show
     @author = Author.find(params[:id])
