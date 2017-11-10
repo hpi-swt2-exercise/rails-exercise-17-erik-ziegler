@@ -42,6 +42,14 @@ class PapersController < ApplicationController
     end
   end
 
+  # DELETE /authors/:id
+  def destroy
+    @paper = Paper.find(params[:id])
+    @paper.destroy
+
+    redirect_to papers_path
+  end
+
   private
 
   def paper_params
