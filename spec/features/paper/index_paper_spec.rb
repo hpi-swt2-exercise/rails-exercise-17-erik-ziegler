@@ -15,4 +15,10 @@ describe "Index paper page", type: :feature do
     expect(page).to have_content(@paper.venue)
     expect(page).to have_content(@paper.year)
   end
+
+  it "should have add paper link" do
+    visit papers_path
+    
+    expect(page).to have_css("a", text: "Add paper")
+  end
 end
