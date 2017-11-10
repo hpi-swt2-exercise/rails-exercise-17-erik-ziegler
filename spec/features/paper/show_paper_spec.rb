@@ -12,5 +12,6 @@ describe "Show paper page", type: :feature do
     visit paper_path @paper
 
     expect(page).to have_content(@paper.title)
+    expect(page).to have_content(@paper.venue)
   end
 end
