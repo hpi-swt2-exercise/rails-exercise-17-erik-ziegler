@@ -2,6 +2,7 @@
 class PapersController < ApplicationController
   # GET /papers
   def index
+    @papers = Paper.all
   end
 
   # GET /papers/:id
