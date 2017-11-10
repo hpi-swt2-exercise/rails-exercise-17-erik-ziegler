@@ -6,4 +6,11 @@ describe "Show paper page", type: :feature do
     @paper = FactoryGirl.create :paper
     visit paper_path @paper
   end
+
+  it "should show paper record" do
+    @paper = FactoryGirl.create :paper
+    visit paper_path @paper
+
+    expect(page).to have_content(@paper.title)
+  end
 end
