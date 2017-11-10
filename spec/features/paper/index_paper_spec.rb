@@ -31,4 +31,14 @@ describe "Index paper page", type: :feature do
     expect(page).to have_css("a", text: "Edit")
     expect(page).to have_css("a", text: "Destroy")
   end
+
+  it "should allow to filter by year" do
+    paper1950 = Paper.create(title: 'Paper 1950', venue: 'Venue 1950', year: 1950)
+    paper1968 = Paper.create(title: 'Paper 1968', venue: 'Venue 1968', year: 1968)
+
+    visit papers_path year: 1950
+
+    expect(page).to have_content(paper1950.title)
+    expect(page).not_to have_content(paper1968.title)
+  end
 end
