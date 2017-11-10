@@ -2,7 +2,7 @@
 class PapersController < ApplicationController
   # GET /papers
   def index
-    @papers = Paper.all
+    params[:year].present? ? @papers = Paper.year(params[:year]) : @papers = Paper.all
   end
 
   # GET /papers/:id
