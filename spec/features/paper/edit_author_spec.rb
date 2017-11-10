@@ -15,4 +15,15 @@ describe "Edit paper page", type: :feature do
 
     find('input[type="submit"]').click
   end
+
+  it "should allow to select 5 authors from dropdowns" do
+    @paper = FactoryGirl.create :paper
+    visit edit_paper_path @paper
+
+    expect(page).to have_content("Author 1")
+    expect(page).to have_content("Author 2")
+    expect(page).to have_content("Author 3")
+    expect(page).to have_content("Author 4")
+    expect(page).to have_content("Author 5")
+  end
 end
