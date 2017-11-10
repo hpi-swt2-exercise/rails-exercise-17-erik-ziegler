@@ -21,4 +21,10 @@ describe "Paper", :type => :model do
   it "should be invalid with not-integer year" do
     expect(paper_without_year).to_not be_valid
   end
+
+  it "should have empty list of authors" do
+    @paper = FactoryGirl.create :paper
+
+    expect(@paper.authors).to be_empty
+  end
 end
