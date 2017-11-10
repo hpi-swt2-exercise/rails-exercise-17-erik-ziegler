@@ -5,4 +5,14 @@ describe "Index paper page", type: :feature do
   it "should render without error" do
     visit papers_path
   end
+
+  it "should show paper record" do
+    @paper = FactoryGirl.create :paper
+
+    visit papers_path
+
+    expect(page).to have_content(@paper.title)
+    expect(page).to have_content(@paper.venue)
+    expect(page).to have_content(@paper.year)
+  end
 end
