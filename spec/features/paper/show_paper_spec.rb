@@ -15,4 +15,14 @@ describe "Show paper page", type: :feature do
     expect(page).to have_content(@paper.venue)
     expect(page).to have_content(@paper.year)
   end
+
+  it "should list authors" do
+    @paper = FactoryGirl.create :paper
+    @author = FactoryGirl.create :author
+    @paper.authors << @author
+
+    visit paper_path @paper
+
+    expect(page).to have_content(@author.name)
+  end
 end
