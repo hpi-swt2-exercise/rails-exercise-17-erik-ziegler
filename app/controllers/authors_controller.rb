@@ -4,15 +4,9 @@ class AuthorsController < ApplicationController
     @authors = Author.all
   end
 
-  # POST /authors/new
-  def create
-    @author = Author.new(author_params)
-
-    if @author.save
-      redirect_to @author
-    else
-      render 'new'
-    end
+  # GET /authors/:id
+  def show
+    @author = Author.find(params[:id])
   end
 
   # GET /authors/new
@@ -23,6 +17,17 @@ class AuthorsController < ApplicationController
   # GET /authors/:id/edit
   def edit
     @author = Author.find(params[:id])
+  end
+
+  # POST /authors/new
+  def create
+    @author = Author.new(author_params)
+
+    if @author.save
+      redirect_to @author
+    else
+      render 'new'
+    end
   end
 
   # POST /authors/:id/edit
@@ -36,9 +41,12 @@ class AuthorsController < ApplicationController
     end
   end
 
-  # GET /authors/:id
-  def show
+  # DELETE /authors/:id
+  def destroy
     @author = Author.find(params[:id])
+    @author.destroy
+
+    redirect_to authors_path
   end
 
   private
