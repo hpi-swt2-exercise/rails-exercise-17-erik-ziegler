@@ -12,14 +12,18 @@ class PapersController < ApplicationController
 
   # GET /papers/new
   def new
+    @paper = Paper.new
   end
 
   # POST /papers/new
   def create
     @paper = Paper.new(paper_params)
 
-    @paper.save
-    redirect_to new_author_path
+    if @paper.save
+      redirect_to @paper
+    else
+      render 'new'
+    end
   end
 
   private
