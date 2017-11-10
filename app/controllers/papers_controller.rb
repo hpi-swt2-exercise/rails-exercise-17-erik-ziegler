@@ -1,5 +1,9 @@
 
 class PapersController < ApplicationController
+  # GET /papers
+  def index
+  end
+
   # GET /papers/:id
   def show
     @paper = Paper.find(params[:id])
