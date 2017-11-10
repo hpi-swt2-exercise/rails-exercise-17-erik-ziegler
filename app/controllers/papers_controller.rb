@@ -1,5 +1,9 @@
 
 class PapersController < ApplicationController
+  # GET /papers/:id
+  def show
+  end
+
   # GET /papers/new
   def new
   end
