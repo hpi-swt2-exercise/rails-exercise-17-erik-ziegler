@@ -13,5 +13,6 @@ describe "Show paper page", type: :feature do
 
     expect(page).to have_content(@paper.title)
     expect(page).to have_content(@paper.venue)
+    expect(page).to have_content(@paper.year)
   end
 end
