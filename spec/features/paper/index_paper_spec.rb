@@ -29,5 +29,6 @@ describe "Index paper page", type: :feature do
 
     expect(page).to have_css("a", text: "Show")
     expect(page).to have_css("a", text: "Edit")
+    expect(page).to have_css("a", text: "Destroy")
   end
 end
