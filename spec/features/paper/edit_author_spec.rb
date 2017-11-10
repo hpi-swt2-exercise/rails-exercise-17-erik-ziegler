@@ -26,4 +26,14 @@ describe "Edit paper page", type: :feature do
     expect(page).to have_content("Author 4")
     expect(page).to have_content("Author 5")
   end
+
+  it "should show only authors name in first select box" do
+    @paper = FactoryGirl.create :paper
+    @alan = FactoryGirl.create :author
+    @paper.authors << @alan
+
+    visit edit_paper_path @paper
+
+    expect(page).to have_select("Author 1", selected: @alan.name)
+  end
 end
