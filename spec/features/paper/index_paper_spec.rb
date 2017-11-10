@@ -22,11 +22,12 @@ describe "Index paper page", type: :feature do
     expect(page).to have_css("a", text: "Add paper")
   end
 
-  it "should have show link" do
+  it "should have show and edit link" do
     FactoryGirl.create :paper
 
     visit papers_path
 
     expect(page).to have_css("a", text: "Show")
+    expect(page).to have_css("a", text: "Edit")
   end
 end
