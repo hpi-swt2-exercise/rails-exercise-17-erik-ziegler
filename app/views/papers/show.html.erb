@@ -10,3 +10,16 @@
   <strong>Year:</strong>
   <%= @paper.year %>
 </p>
+
+<h3>Authors</h3>
+<% @paper.authors.each do |author| %>
+    <p>
+      <strong>Name:</strong>
+      <%= author.name %>
+    </p>
+    <p>
+      <strong>Homepage:</strong>
+      <%= author.homepage %>
+    </p>
+    <hr />
+<% end %>
